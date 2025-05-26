@@ -1,0 +1,12 @@
+<nav class="fixed md:top-3 w-full flex justify-center items-center z-50 bg-primary md:bg-transparent">
+  <div class="w-full md:hidden flex items-center justify-between px-3 ">
+    <div class="font-bold text-lg mb-2">JarolRojas<span class="text-cyan-500">.dev</span></div>
+    <div>
+      <app-nav-burger [isOpen]="isOpen" [toggleMenu]="toggleMenu.bind(this)"
+        [closeMenu]="closeMenu.bind(this)"></app-nav-burger>
+    </div>
+  </div>
+  <div class="hidden md:flex border rounded-full bg-primary p-3 px-8 ">
+    <app-navbar-menu-list></app-navbar-menu-list>
+  </div>
+</nav>
