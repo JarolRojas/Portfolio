@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
 .header-menu-list{
   @apply flex items-center gap-2;
+}
+
+*{
+  font-display: swap;
 }
