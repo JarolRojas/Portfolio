@@ -1,4 +1,5 @@
-<select [value]="translate.currentLang" (change)="changeLang($event)" class="bg-gray-800 w-20 absolute lg:right-3 lg:top-20 md:top-20 md:right-3 top-15 left-2">
+<label for="lang-select" class="sr-only">Seleccionar idioma</label>
+<select id="lang-select" [value]="translate.currentLang" (change)="changeLang($event)" class="bg-gray-800 w-20 absolute lg:right-3 lg:top-20 md:top-20 md:right-3 top-25 left-2">
   <option value="es">Español</option>
   <option value="en">English</option>
 </select>
