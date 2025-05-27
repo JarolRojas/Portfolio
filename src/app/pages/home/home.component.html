@@ -1,1 +1,32 @@
-menu
+<section class="mx-5 sm:mx-7 md:mx-9 lg:mx-25">
+  <div class=" border border-red-500 grid grid-cols-2 gap-4">
+    <div class="border border-blue-400 col-span-2 md:col-span-1">
+      <div class="flex items-center gap-2 border rounded-full w-fit p-1.5 px-3">
+        <div class="rounded-full animate-pulse bg-blue-400 size-1"></div>
+        <div>{{'welcome' | translate }}</div>
+      </div>
+
+      <div class="mt-5">
+        <p class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl"> {{'hello' | translate }}</p>
+        <h1 class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl">{{ 'iamname' | translate}} </h1>
+      </div>
+      <div class="mt-5 border w-fit rounded-2xl flex items-center gap-2 p-2 px-3">
+        <div>
+          <i class="fa-solid fa-bolt text-yellow-500 animate-rubber-band animate-iteration-count-infinite animate-"></i>
+        </div>
+        <div [ngClass]="{'humo': animarHumo}" class="text-2xl font-semibold transition-all duration-500 inline-block">
+          {{ textoActual }}<span class="typewriter-cursor">|</span>
+        </div>
+      </div>
+      <div>
+
+      </div>
+
+
+    </div>
+    <div class="border border-blue-400 col-span-2 md:col-span-1">
+
+
+    </div>
+  </div>
+</section>
