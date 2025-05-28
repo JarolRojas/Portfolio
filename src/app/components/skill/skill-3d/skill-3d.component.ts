@@ -44,10 +44,10 @@ export class Skill3dComponent implements AfterViewInit {
         });
         canvas.addEventListener('touchstart', () => {
           TagCanvas.SetSpeed('logoCanvas', [0, 0]);
-        });
+        }, { passive: true });
         canvas.addEventListener('touchend', () => {
           TagCanvas.SetSpeed('logoCanvas', [0.1, -0.1]);
-        });
+        }, { passive: true });
       }
     } catch (e: any) {
       console.error('TagCanvas error:', e);
