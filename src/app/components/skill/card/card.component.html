@@ -1,15 +1,1 @@
-<div class="border p-4 rounded shadow">
-  <div class="flex items-center">
-    <i [ngClass]="card.icon" class="fa-solid mr-2"></i>
-    <span class="ml-2 font-bold text-lg">{{ card.category | translate }}</span>
-  </div>
-  <div class="mt-4 flex flex-row gap-2">
-    <div *ngFor="let skill of card.skills"
-      class="w-fit p-2 flex items-center gap-2 border rounded-full">
-      <svg class="icon size-4">
-        <use [attr.xlink:href]="'./../../../../assets/sprites.svg#' + skill.icon"></use>
-      </svg>
-      <span>{{ skill.description }}</span>
-    </div>
-  </div>
-</div>
+<div class="col-span-1">SkillSection.category</div>

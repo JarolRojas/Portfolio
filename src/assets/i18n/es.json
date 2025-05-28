@@ -17,6 +17,8 @@
     "TEXT5": "Este es el texto 5"
   },
   "SKILLS": {
-    "FRONTEND": "Frontend"
+    "FRONTEND": "Frontend",
+    "BACKEND": "Backend",
+    "DATABASES": "Bases de datos"
   }
 }

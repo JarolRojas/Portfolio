@@ -1,18 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SkillCard } from '../../../interfaces/skill-card';
-import { NgFor, NgClass } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { SkillSection } from '../../../interfaces/skill-section';
 
 @Component({
   selector: 'skill-card',
-  imports: [NgFor, NgClass, TranslateModule],
+  imports: [],
   templateUrl: './card.component.html',
-  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardComponent implements OnInit {
-  @Input() card!: SkillCard;
+export class CardComponent {
+  @Input() SkillSection!: SkillSection[];
 
-  ngOnInit() {
-    console.log('CardComponent recibido:', this.card);
-  }
 }
