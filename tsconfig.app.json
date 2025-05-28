@@ -6,7 +6,14 @@
     "outDir": "./out-tsc/app",
     "types": [
       "@angular/localize"
-    ]
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["app/components/*"],
+      "@interfaces/*": ["app/interfaces/*"]
+    }
   },
   "files": [
     "src/main.ts"

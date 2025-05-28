@@ -1,40 +1,29 @@
 <section class="mx-5 sm:mx-7 md:mx-9 lg:mx-25">
-  <div class="flex items-center justify-center border border-red-500">
-    <canvas id="logoCanvas" class="cursor-grab border" height="300">
-      Tu navegador no soporta Canvas 😥
-    </canvas>
-
-    <!-- Lista de logos que usarás -->
-    <div id="logoList" style="display: none;">
-      <ul>
-        <li><a href="#"><img src="./../../../assets/logos/angular.svg" alt="Angular" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/bash.svg" alt="Bash" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/bootstrap.svg" alt="Bootstrap" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/bulma.svg" alt="Bulma" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/css3.svg" alt="CSS3" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/database.svg" alt="Database" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/docker.svg" alt="Docker" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/eclipse.svg" alt="Eclipse" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/git.svg" alt="Git" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/github.svg" alt="GitHub" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/html5.svg" alt="HTML5" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/java.svg" alt="Java" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/javascript.svg" alt="JavaScript" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/linux.svg" alt="Linux" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/nginx.svg" alt="Nginx" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/node-js.svg" alt="Node.js" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/powershell.svg" alt="PowerShell" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/python.svg" alt="Python" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/tailwind.svg" alt="Tailwind" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/typescript.svg" alt="TypeScript" /></a></li>
-        <li><a href="#"><img src="./../../../assets/logos/visual.svg" alt="Visual" /></a></li>
-      </ul>
-    </div>
-
+  <div class="flex items-center justify-center">
+    <app-skill-3d [categories]="this.categories"></app-skill-3d>
   </div>
-  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-    <ng-container *ngFor="let card of skillCards">
-      <skill-card [card]="card"></skill-card>
-    </ng-container>
+
+  <div class="border grid grid-cols-3">
+    @for (category of categories; track category) {
+    <div class="col-span-1 mb-4 border flex flex-col items-center">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <i [ngClass]="['fa-solid', category.icon]"></i>
+        <span>
+          {{category.category | translate }}
+        </span>
+      </div>
+
+      <div class="flex flex-row flex-wrap items-center gap-3 w-full">
+        @for (skill of category.skills; track skill) {
+        <div class="flex items-center gap-2">
+          <img [src]="'./../../../assets/logos/' + skill.icon + '.svg'" width="20px" [alt]="skill.description + 'icon'">
+          <span>
+            {{skill.description | translate }}
+          </span>
+        </div>
+        }
+      </div>
+    </div>
+    }
   </div>
 </section>

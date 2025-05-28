@@ -1,0 +1,18 @@
+<canvas id="logoCanvas"  height="300" width="600" class="cursor-grab border">
+</canvas>
+
+<div id="logoList" style="display: none;">
+  <ul>
+    @for (category of categories; track category) {
+    @for (category of category.skills; track category) {
+    <li>
+      <a [href]="category.link ? category.link : 'javascript:void(0)'" [attr.target]="category.link ? '_blank' : null"
+        [style.pointer-events]="!category.link ? 'none' : null" [style.cursor]="!category.link ? 'default' : null">
+        <img [src]="'assets/logos/' + category.icon + '.svg'" [alt]="category.description + 'logo'" width="30px">
+      </a>
+    </li>
+    }
+    }
+
+  </ul>
+</div>
