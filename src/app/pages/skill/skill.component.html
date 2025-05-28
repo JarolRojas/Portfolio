@@ -16,7 +16,7 @@
       <div class="flex flex-row flex-wrap items-center gap-3 w-full">
         @for (skill of category.skills; track skill) {
         <div class="flex items-center gap-2">
-          <img [src]="'./../../../assets/logos/' + skill.icon + '.svg'" width="20px" [alt]="skill.description + 'icon'">
+          <img [src]="'./../../../assets/logos/' + skill.icon + '.svg'" width="20px" height="20px" [alt]="skill.description + 'icon'">
           <span>
             {{skill.description | translate }}
           </span>
