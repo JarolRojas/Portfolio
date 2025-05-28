@@ -24,17 +24,17 @@ export class SkillComponent {
         { description: 'CSS3', icon: 'css3', color: '#1572b6', link: 'https://developer.mozilla.org/es/docs/Web/CSS' },
         { description: 'JavaScript', icon: 'javascript', color: '#f7df1e', link: 'https://developer.mozilla.org/es/docs/Web/JavaScript' },
         { description: 'TypeScript', icon: 'typescript', color: '#3178c6', link: 'https://www.typescriptlang.org/' },
-        { description: 'Bootstrap', icon: 'bootstrap' },
-        { description: 'Tailwind CSS', icon: 'tailwind' },
+        { description: 'Bootstrap', icon: 'bootstrap', color: '#563d7c', link: 'https://getbootstrap.com/' },
+        { description: 'Tailwind CSS', icon: 'tailwind', color: '#38bdf8', link: 'https://tailwindcss.com/' },
       ]
     },
     {
       category: 'SKILLS.BACKEND',
       icon: 'fa-globe',
       skills: [
-        { description: 'Python', icon: 'python' },
-        { description: 'Node.js', icon: 'node' },
-        { description: 'Java', icon: 'java' },
+        { description: 'Python', icon: 'python', color: '#3776ab', link: 'https://www.python.org/' },
+        { description: 'Node.js', icon: 'node', color: '#339933', link: 'https://nodejs.org/' },
+        { description: 'Java', icon: 'java', color: '#007396', link: 'https://www.java.com/' },
 
 
       ]

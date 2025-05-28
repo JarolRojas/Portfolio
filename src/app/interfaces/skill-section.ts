@@ -7,6 +7,6 @@ export interface SkillSection {
 export interface Skill {
   description: string;
   icon: string;
+  link: string; // Opcional, para añadir un enlace al icono
   color?: string; // Opcional, para personalizar el color del icono
-  link?: string; // Opcional, para añadir un enlace al icono
 }
