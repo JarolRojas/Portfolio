@@ -32,6 +32,22 @@ export class SkillComponent implements AfterViewInit {
         shadow: '#222', // Sombra oscura para resaltar las imágenes
         shadowBlur: 5, // Difuminado de la sombra
       });
+      // Añadir eventos para detener y reanudar la rotación al hacer clic o tocar
+      const canvas = document.getElementById('logoCanvas');
+      if (canvas) {
+        canvas.addEventListener('mousedown', () => {
+          TagCanvas.SetSpeed('logoCanvas', [0, 0]);
+        });
+        canvas.addEventListener('mouseup', () => {
+          TagCanvas.SetSpeed('logoCanvas', [0.1, -0.1]);
+        });
+        canvas.addEventListener('touchstart', () => {
+          TagCanvas.SetSpeed('logoCanvas', [0, 0]);
+        });
+        canvas.addEventListener('touchend', () => {
+          TagCanvas.SetSpeed('logoCanvas', [0.1, -0.1]);
+        });
+      }
     } catch (e: any) {
       console.error('TagCanvas error:', e);
     }
