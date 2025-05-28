@@ -4,8 +4,11 @@
     <span class="ml-2 font-bold text-lg">{{ card.category | translate }}</span>
   </div>
   <div class="mt-4 flex flex-row gap-2">
-    <div *ngFor="let skill of card.skills" class="w-fit p-2 flex items-center gap-2 border rounded-full bg-white text-black">
-      <i [ngClass]="skill.icon" class="fa-solid"></i>
+    <div *ngFor="let skill of card.skills"
+      class="w-fit p-2 flex items-center gap-2 border rounded-full">
+      <svg class="icon size-4">
+        <use [attr.xlink:href]="'./../../../../assets/sprites.svg#' + skill.icon"></use>
+      </svg>
       <span>{{ skill.description }}</span>
     </div>
   </div>

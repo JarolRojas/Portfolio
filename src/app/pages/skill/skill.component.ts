@@ -15,8 +15,7 @@ export class SkillComponent {
       category: 'SKILLS.FRONTEND',
       icon: 'fa-globe',
       skills: [
-        { description: 'Angular', icon: 'fa-brands fa-angular' },
-        { description: 'React', icon: 'fa-brands fa-react' },
+        { description: 'Angular', icon: 'angular' },
       ]
     },
 

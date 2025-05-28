@@ -4,6 +4,11 @@
     <i class="fa fa-home"></i>
     <p>{{ 'home' | translate }}</p>
   </a>
+  <a class="header-menu-list" [routerLink]="['/skill']" routerLinkActive="active"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-lightbulb"></i>
+    <p>{{ 'skill' | translate }}</p>
+  </a>
   <a class="header-menu-list" [routerLink]="['/experience']" routerLinkActive="active"
     (click)="onOptionClick && onOptionClick()">
     <i class="fa fa-briefcase"></i>
@@ -18,11 +23,6 @@
     (click)="onOptionClick && onOptionClick()">
     <i class="fa fa-folder-open"></i>
     <p>{{ 'project' | translate }}</p>
-  </a>
-  <a class="header-menu-list" [routerLink]="['/skill']" routerLinkActive="active"
-    (click)="onOptionClick && onOptionClick()">
-    <i class="fa fa-lightbulb"></i>
-    <p>{{ 'skill' | translate }}</p>
   </a>
   <a class="header-menu-list" [routerLink]="['/contact']" routerLinkActive="active"
     (click)="onOptionClick && onOptionClick()">
