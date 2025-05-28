@@ -1,0 +1,12 @@
+<div class="border p-4 rounded shadow">
+  <div class="flex items-center">
+    <i [ngClass]="card.icon" class="fa-solid mr-2"></i>
+    <span class="ml-2 font-bold text-lg">{{ card.category | translate }}</span>
+  </div>
+  <div class="mt-4 flex flex-row gap-2">
+    <div *ngFor="let skill of card.skills" class="w-fit p-2 flex items-center gap-2 border rounded-full bg-white text-black">
+      <i [ngClass]="skill.icon" class="fa-solid"></i>
+      <span>{{ skill.description }}</span>
+    </div>
+  </div>
+</div>

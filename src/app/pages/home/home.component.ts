@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgClass } from '@angular/common';
 
 
@@ -9,13 +9,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  textos: string[] = [
-    "Este es el texto 1",
-    "Este es el texto 2",
-    "Este es el texto 3",
-    "Este es el texto 4",
-    "Este es el texto 5",
-  ];
+  textos: string[] = [];
   textoActual: string = '';
   private indice: number = 0;
   private intervalo: any;
@@ -23,8 +17,24 @@ export class HomeComponent {
   private borrando: boolean = false;
   animarHumo: boolean = false;
 
+  constructor(private translate: TranslateService) {}
+
   ngOnInit() {
-    this.mostrarLetraPorLetra();
+    this.cargarTextos();
+  }
+
+  cargarTextos() {
+    const keys = [
+      'HOME.TEXT1',
+      'HOME.TEXT2',
+      'HOME.TEXT3',
+      'HOME.TEXT4',
+      'HOME.TEXT5'
+    ];
+    this.translate.get(keys).subscribe((res: any) => {
+      this.textos = keys.map(key => res[key]);
+      this.mostrarLetraPorLetra();
+    });
   }
 
   mostrarLetraPorLetra() {

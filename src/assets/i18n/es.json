@@ -8,5 +8,15 @@
   "contact": "Contacto",
   "welcome": "Bienvenido a mi portafolio",
   "hello": "Hola",
-  "iamname": "Soy Jarol Rojas"
+  "iamname": "Soy Jarol Rojas",
+  "HOME": {
+    "TEXT1": "Este es el texto 1",
+    "TEXT2": "Este es el texto 2",
+    "TEXT3": "Este es el texto 3",
+    "TEXT4": "Este es el texto 4",
+    "TEXT5": "Este es el texto 5"
+  },
+  "SKILLS": {
+    "FRONTEND": "Frontend"
+  }
 }

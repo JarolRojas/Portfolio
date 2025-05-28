@@ -1,1 +1,11 @@
-<p>skill works!</p>,
+<section class="mx-5 sm:mx-7 md:mx-9 lg:mx-25">
+  <div class="h-[40vh] min-h-[20em] flex items-center justify-center border border-red-500">
+    <img src="./../../../assets/imagendeapoyoskills.png" alt="imagendeapoyoskills"
+      class="w-full h-full object-scale-down">
+  </div>
+  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+    <ng-container *ngFor="let card of skillCards">
+      <skill-card [card]="card"></skill-card>
+    </ng-container>
+  </div>
+</section>

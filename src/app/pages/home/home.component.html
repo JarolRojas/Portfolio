@@ -1,5 +1,5 @@
 <section class="mx-5 sm:mx-7 md:mx-9 lg:mx-25">
-  <div class=" border border-red-500 grid grid-cols-2 gap-4">
+  <div class="border border-red-500 grid grid-cols-2 gap-4">
     <div class="border border-blue-400 col-span-2 md:col-span-1">
       <div class="flex items-center gap-2 border rounded-full w-fit p-1.5 px-3">
         <div class="rounded-full animate-pulse bg-blue-400 size-1"></div>
@@ -10,19 +10,23 @@
         <p class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl"> {{'hello' | translate }}</p>
         <h1 class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl">{{ 'iamname' | translate}} </h1>
       </div>
-      <div class="mt-5 border w-fit rounded-2xl flex items-center gap-2 p-2 px-3">
+      <div class="bg-blue-500/20 mt-5 border border-blue-500/20 w-fit rounded-2xl flex items-center gap-2 p-2 px-3 lg:mt-10">
         <div>
           <i class="fa-solid fa-bolt text-yellow-500 animate-rubber-band animate-iteration-count-infinite animate-"></i>
         </div>
-        <div [ngClass]="{'humo': animarHumo}" class="text-2xl font-semibold transition-all duration-500 inline-block">
+        <div [ngClass]="{'humo': animarHumo}" class="text-md md:text-lg font-semibold transition-all duration-500 inline-block">
           {{ textoActual }}<span class="typewriter-cursor">|</span>
         </div>
       </div>
-      <div>
-
+      <div class="mt-5">
+        <p class="md:text-xl sm:text-sm">Esto será un texto estatico, que siempre se mantendra aqui sin animaciones</p>
       </div>
 
-
+      <div class="mt-5 flex gap-5">
+        <!-- AQUI IRAN LOS BOTONES -->
+        <button>boton 1 (contacto)</button>
+        <button>boton 2 (descargar cv)</button>
+      </div>
     </div>
     <div class="border border-blue-400 col-span-2 md:col-span-1">
 
