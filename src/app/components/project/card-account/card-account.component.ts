@@ -1,17 +1,18 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { AccountGithubService } from '../../../Services/github/account-github.service';
 import { Account } from '../../../interfaces/project/account';
 import { NgIf } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter, interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'project-card-account',
   imports: [NgIf],
   templateUrl: './card-account.component.html',
 })
-export class CardAccountComponent implements OnInit {
+export class CardAccountComponent implements OnInit, OnDestroy {
   account: Account | null = null;
+  private pollingSubscription: Subscription | null = null;
 
   constructor(
     private accountService: AccountGithubService,
@@ -26,6 +27,16 @@ export class CardAccountComponent implements OnInit {
       .subscribe(() => {
         this.loadAccount();
       });
+    // Polling cada 30 segundos
+    this.pollingSubscription = interval(30000).subscribe(() => {
+      this.loadAccount();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.pollingSubscription) {
+      this.pollingSubscription.unsubscribe();
+    }
   }
 
   loadAccount(): void {
