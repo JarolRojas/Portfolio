@@ -12,5 +12,5 @@ export interface Account {
   linkedinUrl: string;
   instagramUrl: string;
   redditUrl: string;
-  githubUrl: string;
+  email: string;
 }

@@ -1,24 +1,23 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AccountGithubService } from '../../../Services/github/account-github.service';
 import { Account } from '../../../interfaces/project/account';
 import { NgIf } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter, interval, Subscription } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'project-card-account',
   imports: [NgIf],
   templateUrl: './card-account.component.html',
 })
-export class CardAccountComponent implements OnInit, OnDestroy {
+export class CardAccountComponent implements OnInit {
   account: Account | null = null;
-  private pollingSubscription: Subscription | null = null;
 
   constructor(
     private accountService: AccountGithubService,
     private router: Router,
     private cdr: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadAccount();
@@ -27,35 +26,25 @@ export class CardAccountComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.loadAccount();
       });
-    // Polling cada 30 segundos
-    this.pollingSubscription = interval(30000).subscribe(() => {
-      this.loadAccount();
-    });
-  }
-
-  ngOnDestroy(): void {
-    if (this.pollingSubscription) {
-      this.pollingSubscription.unsubscribe();
-    }
   }
 
   loadAccount(): void {
     this.accountService.getAccount().subscribe((data: any) => {
       this.account = {
-        name: data.name,
-        username: data.login,
-        profileUrl: data.html_url,
-        imgUrl: data.avatar_url,
-        bio: data.bio,
-        location: data.location,
-        followers: data.followers,
-        following: data.following,
-        portfolioUrl: data.blog,
+        name: data.name, //
+        username: data.login, //
+        profileUrl: data.html_url, //
+        imgUrl: data.avatar_url, //
+        bio: data.bio, //
+        location: data.location, //
+        followers: data.followers, //
+        following: data.following, //
+        portfolioUrl: "https://jarolrojas.dev", //
         twitterUrl: data.twitter_username ? `https://twitter.com/${data.twitter_username}` : '',
-        linkedinUrl: '',
-        instagramUrl: '',
-        redditUrl: '',
-        githubUrl: data.html_url
+        linkedinUrl: 'https://www.linkedin.com/in/jarolrojas',
+        instagramUrl: 'https://www.instagram.com/jarolrojasr/',
+        redditUrl: 'https://www.reddit.com/user/JarolRojasR/',
+        email: 'jr.rojas0327@gmail.com'
       };
       this.cdr.detectChanges();
     });

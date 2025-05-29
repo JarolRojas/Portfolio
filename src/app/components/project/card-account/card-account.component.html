@@ -12,12 +12,81 @@
         <a [href]="acc.profileUrl" target="_blank">&#64;{{ acc.username }}</a>
       </div>
     </div>
-    <div>
-      <p class="text-sm md:text-base lg:text-lg p-2">{{ acc.bio }}</p>
+    <div class="flex flex-col items-center gap-2 ">
+      <!-- follow -->
+      <a [href]="acc.profileUrl" target="_blank">
+        <button type="button"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center gap-2">
+          <i class="fa-solid fa-user-plus"></i> Seguir
+        </button>
+      </a>
+
     </div>
+    <div class="">
+      <p class="text-sm text-justify md:text-base lg:text-lg p-2">{{ acc.bio }}</p>
+    </div>
+    <hr>
+    <!-- location -->
+    <div>
+      <div class="flex items-center gap-2 p-2">
+        <a href="https://www.google.es/maps/place/Pamplona,+Navarra/@42.815766,-1.6500216,13z/data=!3m1!4b1!4m6!3m5!1s0xd50928ba31965c7:0x4e6e903632cb2e90!8m2!3d42.812526!4d-1.6457745!16zL20vMGc4NTA?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+          target="_blank">
+          <i class="fa-solid fa-location-dot text-gray-500 pr-1"></i>
+          <span class="text-sm md
+          se lg:text-lg">{{ acc.location || 'No disponible' }}</span>
+        </a>
+      </div>
+
+      <!-- Redes socuales -->
+      <div class="flex items-center gap-2 p-2">
+        <span class="text-sm md:text-base lg:text-lg">
+          <a [href]="acc.portfolioUrl" target="_blank">
+            <i class="fa-solid fa-link text-gray-500"></i> {{ acc.portfolioUrl || 'No disponible' }}
+          </a>
+        </span>
+      </div>
+      <div class="flex items-center gap-2 p-2">
+        <span class="text-sm md:text-base lg:text-lg">
+          <a [href]="acc.twitterUrl" target="_blank">
+            <i class="fa-brands fa-x-twitter text-gray-500"></i> X (Twitter)
+          </a>
+        </span>
+      </div>
+      <div class="flex items-center gap-2 p-2">
+        <span class="text-sm md:text-base lg:text-lg">
+          <a [href]="acc.linkedinUrl" target="_blank">
+            <i class="fa-brands fa-linkedin text-gray-500"></i> Linkedin
+          </a>
+        </span>
+      </div>
+      <div class="flex items-center gap-2 p-2">
+        <span class="text-sm md:text-base lg:text-lg">
+          <ng-container *ngIf="acc.email; else noEmail">
+            <a [href]="'mailto:' + acc.email" target="_blank">
+              <i class="fa-solid fa-envelope text-gray-500"></i> {{ acc.email }}
+            </a>
+          </ng-container>
+          <ng-template #noEmail>
+            <i class="fa-solid fa-envelope text-gray-500"></i> No disponible
+          </ng-template>
+        </span>
+      </div>
+
+    </div>
+
+    <hr>
+    <div class="flex justify-center gap-10 p-2">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-users text-gray-500"></i>
+        <span class="text-sm md:text-base lg:text-lg">{{ acc.followers }} seguidores</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-user-plus text-gray-500"></i>
+        <span class="text-sm md:text-base lg:text-lg">{{ acc.following }} seguidos</span>
+      </div>
+    </div>
+
   </div>
-
-
 
 </div>
 <ng-template #loading>
