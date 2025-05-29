@@ -1,4 +1,4 @@
-<div *ngIf="account as acc" class="flex justify-center">
+<div *ngIf="account as acc; else loading" class="flex justify-center">
 
 
 
@@ -19,17 +19,7 @@
 
 
 
-
-  <!-- <div class="flex">
-    <div class="">
-      <img [src]="acc.imgUrl" [alt]="acc.name" class="size-30 rounded-full" />
-    </div>
-  </div>
-  <div class="">
-    <h2 class="text-4xl font-semibold">{{ acc.name }}</h2>
-    <a [href]="acc.profileUrl" target="_blank">&#64;{{ acc.username }}</a>
-  </div> -->
-
-
-
 </div>
+<ng-template #loading>
+  <div class="w-full text-center text-gray-400 py-8">Cargando datos de GitHub...</div>
+</ng-template>

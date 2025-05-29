@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AccountGithubService } from '../../../Services/github/account-github.service';
 import { Account } from '../../../interfaces/project/account';
 import { NgIf } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'project-card-account',
@@ -11,9 +13,22 @@ import { NgIf } from '@angular/common';
 export class CardAccountComponent implements OnInit {
   account: Account | null = null;
 
-  constructor(private accountService: AccountGithubService) { }
+  constructor(
+    private accountService: AccountGithubService,
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
+    this.loadAccount();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.loadAccount();
+      });
+  }
+
+  loadAccount(): void {
     this.accountService.getAccount().subscribe((data: any) => {
       this.account = {
         name: data.name,
@@ -31,6 +46,7 @@ export class CardAccountComponent implements OnInit {
         redditUrl: '',
         githubUrl: data.html_url
       };
+      this.cdr.detectChanges();
     });
   }
 }
