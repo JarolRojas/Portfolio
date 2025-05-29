@@ -8,7 +8,7 @@
   "contact": "Contact",
   "welcome": "Welcome to my portfolio",
   "hello": "Hello",
-  "iamname" : "I'm Jarol Rojas",
+  "iamname": "I'm Jarol Rojas",
   "HOME": {
     "TEXT1": "This is text 1",
     "TEXT2": "This is text 2",
@@ -20,5 +20,13 @@
     "FRONTEND": "Frontend",
     "BACKEND": "Backend",
     "DATABASES": "Databases"
+  },
+
+  "CATEGORY": {
+    "FRONTEND": "Frontend",
+    "BACKEND": "Backend",
+    "DEVOPS": "DevOps",
+    "DATABASE": "Database",
+    "OTHER": "Other"
   }
 }

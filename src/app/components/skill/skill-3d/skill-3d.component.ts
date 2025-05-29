@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SkillSection } from '../../../interfaces/skill-section';
+import { CategorySkill } from '../../../interfaces/skill/skill.interface';
 declare var TagCanvas: any;
 
 @Component({
@@ -9,7 +9,7 @@ declare var TagCanvas: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Skill3dComponent implements AfterViewInit {
-  @Input() categories!: SkillSection[];
+  @Input() categories!: CategorySkill[];
 
   ngAfterViewInit(): void {
     try {

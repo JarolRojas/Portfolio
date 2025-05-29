@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SkillSection } from '../../../interfaces/skill-section';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { CategorySkill } from '../../../interfaces/skill/skill.interface';
 
 @Component({
   selector: 'skill-card',
@@ -10,6 +10,6 @@ import { TranslateModule } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
-  @Input() categories!: SkillSection[];
+  @Input() categories!: CategorySkill[];
 
 }

@@ -20,5 +20,12 @@
     "FRONTEND": "Frontend",
     "BACKEND": "Backend",
     "DATABASES": "Bases de datos"
+  },
+  "CATEGORY": {
+    "FRONTEND": "Frontend",
+    "BACKEND": "Backend",
+    "DEVOPS": "DevOps",
+    "DATABASE": "Base de datos",
+    "OTHER": "Otro"
   }
 }
