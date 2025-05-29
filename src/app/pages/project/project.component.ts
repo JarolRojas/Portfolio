@@ -1,22 +1,11 @@
-import { Component } from '@angular/core';
-import { Project, ProjectStatus } from '../../interfaces/project';
-import { statusMap } from '../../interfaces/project'; // Asegúrate de importar statusMap si existe
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CardComponent } from "../../components/project/card-project/card-project.component";
+import { CardAccountComponent } from "../../components/project/card-account/card-account.component";
 
 @Component({
   selector: 'app-project',
+  imports: [CardComponent, CardAccountComponent],
   templateUrl: './project.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectComponent {
-  projects: Project[] = [
-    {
-      title: 'Portfolio',
-      description: 'Mi portafolio personal, donde muestro mis proyectos y habilidades.',
-      year: 2023,
-      status: statusMap[ProjectStatus.PROGRESS],
-      imageUrl: '/assets/images/portfolio.png',
-      imageAlt: 'Imagen del portafolio',
-      githubUrl: '',
-      skills:[]
-    }
-  ];
-}
+export class ProjectComponent { }

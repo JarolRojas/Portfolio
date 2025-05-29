@@ -1,4 +1,4 @@
-import { Skill } from "./skill/skill.interface";
+import { Skill } from "../skill/skill.interface";
 
 export interface Project {
   title: string;

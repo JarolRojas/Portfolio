@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { Project } from '../../../interfaces/project';
+import { Project } from '../../../interfaces/project/project';
 
 @Component({
-  selector: 'app-card',
+  selector: 'project-card',
   imports: [],
-  templateUrl: './card.component.html',
+  templateUrl: './card-project.component.html',
 })
 export class CardComponent {
   @Input() projects!: Project[];
