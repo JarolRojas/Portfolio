@@ -32,7 +32,7 @@ export class CardAccountComponent implements OnInit {
   loadAccount(): void {
     this.accountService.getAccount().subscribe((data: any) => {
       this.account = {
-        imgUrl: "https://avatars.githubusercontent.com/u/123003098?v=4",
+        imgUrl: "assets/img/perfilphoto.webp",
         name: data.name,
         username: data.login,
         bio: data.bio || 'account.noBio',
