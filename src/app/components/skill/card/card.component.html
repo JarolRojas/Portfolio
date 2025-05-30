@@ -1,21 +1,20 @@
 @for (category of categories; track category) {
-    <div class="col-span-1 mb-4 border rounded-2xl flex flex-col p-5">
-      <div class="flex items-center justify-center gap-2 mb-2">
-        <i [ngClass]="['fa-solid', category.icon]"></i>
-        <span>
-          {{category.category | translate }}
-        </span>
-      </div>
-
-      <div class="flex flex-row flex-wrap items-center gap-3 w-full">
-        @for (skill of category.skills; track skill) {
+  <div class="col-span-1 mb-4 border rounded-2xl flex flex-col p-5">
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <i [ngClass]="category.icon"></i>
+      <span>
+        {{category.category | translate }}
+      </span>
+    </div>
+    <div class="flex flex-row flex-wrap items-center gap-3 w-full">
+      @for (skill of category.skills; track skill) {
         <div class="flex items-center gap-2">
-          <img [src]="'./../../../assets/logos/' + skill.icon" width="20" height="20" [alt]="skill.description + 'icon'" loading="lazy">
+          <img [src]="'assets/logos/' + skill.icon" width="20" height="20" [alt]="skill.description + 'icon'" loading="lazy">
           <span>
             {{skill.description | translate }}
           </span>
         </div>
-        }
-      </div>
+      }
     </div>
-    }
+  </div>
+}

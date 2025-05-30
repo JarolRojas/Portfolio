@@ -3,9 +3,7 @@
 
 <div id="logoList" style="display: none;">
   <ul>
-    <!-- Itera sobre las categorías -->
     @for (category of categories; track category.category) {
-      <!-- Itera sobre las skills de cada categoría -->
       @for (skill of category.skills; track skill.description) {
         <li>
           <a [href]="skill.link" target="_blank">

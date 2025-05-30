@@ -1,0 +1,158 @@
+[
+  {
+    "category": "FRONTEND",
+    "icon": "fa-solid fa-code",
+    "skills": [
+      {
+        "description": "Angular",
+        "icon": "angular.svg",
+        "link": "https://angular.io/",
+        "color": "#dd0031"
+      },
+      {
+        "description": "Bootstrap",
+        "icon": "bootstrap.svg",
+        "link": "https://getbootstrap.com/",
+        "color": "#7952b3"
+      },
+      {
+        "description": "Bulma",
+        "icon": "bulma.svg",
+        "link": "https://bulma.io/",
+        "color": "#00d1b2"
+      },
+      {
+        "description": "CSS3",
+        "icon": "css3.svg",
+        "link": "https://www.w3.org/Style/CSS/Overview.en.html",
+        "color": "#264de4"
+      },
+      {
+        "description": "HTML5",
+        "icon": "html5.svg",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+        "color": "#e34c26"
+      },
+      {
+        "description": "JavaScript",
+        "icon": "javascript.svg",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "color": "#f7df1e"
+      },
+      {
+        "description": "Tailwind",
+        "icon": "tailwind.svg",
+        "link": "https://tailwindcss.com/",
+        "color": "#38bdf8"
+      },
+      {
+        "description": "TypeScript",
+        "icon": "typescript.svg",
+        "link": "https://www.typescriptlang.org/",
+        "color": "#3178c6"
+      }
+    ]
+  },
+  {
+    "category": "BACKEND",
+    "icon": "fa-solid fa-server",
+    "skills": [
+      {
+        "description": "Node.js",
+        "icon": "node.svg",
+        "link": "https://nodejs.org/",
+        "color": "#339933"
+      },
+      {
+        "description": "Java",
+        "icon": "java.svg",
+        "link": "https://www.java.com/",
+        "color": "#007396"
+      },
+      {
+        "description": "Python",
+        "icon": "python.svg",
+        "link": "https://www.python.org/",
+        "color": "#3776ab"
+      },
+      {
+        "description": "Visual Basic (net)",
+        "icon": "visual.svg",
+        "link": "https://learn.microsoft.com/en-us/dotnet/visual-basic/",
+        "color": "#68217a"
+      }
+    ]
+  },
+  {
+    "category": "DEVOPS",
+    "icon": "fa-solid fa-cloud",
+    "skills": [
+      {
+        "description": "Docker",
+        "icon": "docker.svg",
+        "link": "https://www.docker.com/",
+        "color": "#2496ed"
+      },
+      {
+        "description": "Nginx",
+        "icon": "nginx.svg",
+        "link": "https://nginx.org/",
+        "color": "#009639"
+      },
+      {
+        "description": "Linux",
+        "icon": "linux.svg",
+        "link": "https://www.linux.org/",
+        "color": "#fcc624"
+      },
+      {
+        "description": "PowerShell",
+        "icon": "powershell.svg",
+        "link": "https://docs.microsoft.com/en-us/powershell/",
+        "color": "#012456"
+      },
+      {
+        "description": "Bash",
+        "icon": "bash.svg",
+        "link": "https://www.gnu.org/software/bash/",
+        "color": "#4eaa25"
+      }
+    ]
+  },
+  {
+    "category": "DATABASE",
+    "icon": "fa-solid fa-database",
+    "skills": [
+      {
+        "description": "SQL Server",
+        "icon": "database.svg",
+        "link": "https://www.microsoft.com/en-us/sql-server/sql-server-downloads",
+        "color": "#00758f"
+      }
+    ]
+  },
+  {
+    "category": "OTHER",
+    "icon": "fa-solid fa-ellipsis-h",
+    "skills": [
+      {
+        "description": "Eclipse",
+        "icon": "eclipse.svg",
+        "link": "https://www.eclipse.org/",
+        "color": "#2c2255"
+      },
+      {
+        "description": "Git",
+        "icon": "git.svg",
+        "link": "https://git-scm.com/",
+        "color": "#f34f29"
+      },
+      {
+        "description": "GitHub",
+        "icon": "github.svg",
+        "link": "https://github.com/JarolRojas",
+        "color": "#181717"
+      }
+    ]
+  }
+]
