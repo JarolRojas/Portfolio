@@ -29,30 +29,50 @@ export class CardAccountComponent implements OnInit {
       });
   }
 
-  loadAccount(): void {
-    this.accountService.getAccount().subscribe((data: any) => {
+  async loadAccount(): Promise<void> {
+    this.accountService.getAccount().subscribe(async (data: any) => {
+      const originalImgUrl = "https://avatars.githubusercontent.com/u/123003098?v=4";
+      const webpImgUrl = await this.convertImageToWebP(originalImgUrl);
       this.account = {
-        imgUrl: "https://avatars.githubusercontent.com/u/123003098?v=4",
+        imgUrl: webpImgUrl,
         name: data.name,
         username: data.login,
         bio: data.bio || 'account.noBio',
-
         githubUrl: data.html_url,
         email: "jr.rojas0327@gmail.com",
         location: data.location || 'account.noLocation',
-
-
         portfolioUrl: "https://jarolrojas.dev",
         twitterUrl: "https://x.com/JarolRojasR",
         linkedinUrl: "https://www.linkedin.com/in/jarolrojas",
         instagramUrl: "https://www.instagram.com/jarolrojasr/",
         redditUrl: "https://www.reddit.com/user/JarolRojasR/",
-
         followers: data.followers,
         following: data.following,
         updatedAt: data.updated_at,
       };
       this.cdr.detectChanges();
+    });
+  }
+
+  // Convierte una imagen a WebP y retorna un dataURL
+  private async convertImageToWebP(url: string): Promise<string> {
+    return new Promise((resolve) => {
+      const img = new window.Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx?.drawImage(img, 0, 0);
+        const webpDataUrl = canvas.toDataURL('image/webp', 0.85);
+        resolve(webpDataUrl);
+      };
+      img.onerror = function () {
+        // Si falla, retorna la url original
+        resolve(url);
+      };
+      img.src = url;
     });
   }
 
