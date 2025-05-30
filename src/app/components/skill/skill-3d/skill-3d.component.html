@@ -9,7 +9,7 @@
       @for (skill of category.skills; track skill.description) {
         <li>
           <a [href]="skill.link" target="_blank">
-            <img [src]="'assets/logos/' + skill.icon" [alt]="skill.description + ' logo'" width="30px">
+            <img [src]="'assets/logos/' + skill.icon" [alt]="skill.description + ' logo'" width="30" height="30" loading="lazy">
           </a>
         </li>
       }

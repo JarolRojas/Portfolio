@@ -1,17 +1,17 @@
 <div *ngIf="account as acc; else loading" class="flex flex-col gap-4 border rounded-2xl p-4 bg-[#0d1117]">
   <div class="flex items-center gap-2">
     <div>
-      <img [src]="acc.imgUrl" [alt]="acc.name" class="size-18 rounded-full" />
+      <img [src]="acc.imgUrl" [alt]="acc.name" class="size-18 rounded-full" width="72" height="72" loading="lazy" />
     </div>
     <div class="flex flex-col">
       <h2 class="text-2xl font-bold">{{ acc.name }}</h2>
-      <a class="-mt-1 text-sm" [href]="acc.githubUrl" target="_blank">&#64;{{ acc.username }}</a>
+      <a class="-mt-1 text-sm" [href]="acc.githubUrl" target="_blank" rel="noopener noreferrer">&#64;{{ acc.username }}</a>
     </div>
   </div>
   <div
     class="border border-[#3d444d] bg-[#212830] flex items-center justify-center rounded-lg hover:bg-[#262c36] transition-all">
     <a class="flex items-center gap-3" [href]="acc.githubUrl"
-      class="w-full h-full text-center p-2 text-sm flex items-center justify-center gap-2">
+      class="w-full h-full text-center p-2 text-sm flex items-center justify-center gap-2" target="_blank" rel="noopener noreferrer">
       {{ 'FOLLOW' | translate }}
       <img src="assets/logos/github.svg" alt="github" width="20px" height="20px" />
     </a>
@@ -23,55 +23,55 @@
 
   <div class="flex flex-col gap-3 mx-2">
     <a class="flex items-center gap-3"
-      [href]="'https://www.google.com/maps/search/' + getLocationForMaps(acc.location | translate)" target="_blank">
+      [href]="'https://www.google.com/maps/search/' + getLocationForMaps(acc.location | translate)" target="_blank" rel="noopener noreferrer">
       <i class="size-3 fa-solid fa-location-dot text-gray-500"></i>
       <span>{{ acc.location | translate }}</span>
     </a>
-    <a class="flex items-center gap-3" [href]="acc.portfolioUrl">
+    <a class="flex items-center gap-3" [href]="'mailto:' + acc.email" target="_blank" rel="noopener noreferrer">
+      <i class="size-3 fa-solid fa-envelope text-gray-500"></i>
+      <span>
+        {{ acc.email }}
+      </span>
+    </a>
+    <a class="flex items-center gap-3" [href]="acc.portfolioUrl" rel="noopener noreferrer" target="_blank">
       <i class="size-3 fa-solid fa-link text-gray-500"></i>
       <span>
         {{'PORFTOLIO' | translate}}
       </span>
     </a>
-    <a class="flex items-center gap-3" [href]="acc.twitterUrl" target="_blank">
+    <a class="flex items-center gap-3" [href]="acc.twitterUrl" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-x-twitter text-gray-500"></i>
       <span>
         X (Twitter)
       </span>
     </a>
-    <a class="flex items-center gap-3" [href]="acc.linkedinUrl" target="_blank">
+    <a class="flex items-center gap-3" [href]="acc.linkedinUrl" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-linkedin text-gray-500"></i>
       <span>
         Linkedin
       </span>
     </a>
-    <a class="flex items-center gap-3" [href]="acc.instagramUrl" target="_blank">
+    <a class="flex items-center gap-3" [href]="acc.instagramUrl" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-instagram text-gray-500"></i>
       <span>
         Instagram
       </span>
     </a>
-    <a class="flex items-center gap-3" [href]="acc.redditUrl" target="_blank">
+    <a class="flex items-center gap-3" [href]="acc.redditUrl" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-reddit text-gray-500"></i>
       <span>
         Reddit
-      </span>
-    </a>
-    <a class="flex items-center gap-3" [href]="'mailto:' + acc.email" target="_blank">
-      <i class="size-3 fa-solid fa-envelope text-gray-500"></i>
-      <span>
-        Email
       </span>
     </a>
   </div>
   <hr class="border-gray-300/50">
 
   <div class="flex justify-center items-center gap-10">
-    <a href="https://github.com/JarolRojas?tab=followers" class="flex items-center gap-3">
+    <a href="https://github.com/JarolRojas?tab=followers" class="flex items-center gap-3" target="_blank" rel="noopener noreferrer">
       <i class="size-3 fa-solid fa-users text-gray-500 -mt-1"></i>
       <span>{{ acc.followers }} {{ 'FOLLOWERS' | translate }}</span>
     </a>
-    <a href="https://github.com/JarolRojas?tab=following" class="flex items-center gap-3">
+    <a href="https://github.com/JarolRojas?tab=following" class="flex items-center gap-3" target="_blank" rel="noopener noreferrer">
       <i class="size-3 fa-solid fa-user-plus text-gray-500 -mt-1"></i>
       <span>{{ acc.following }} {{ 'FOLLOWING' | translate }}</span>
     </a>
