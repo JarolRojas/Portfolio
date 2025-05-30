@@ -1,8 +1,14 @@
-<section class="grid grid-cols-1 sm:grid-cols-12 gap-4 justify-center mx-4 sm:mx-8 md:mx-12 lg:mx-20">
-  <div class="col-span-full sm:col-span-5 lg:col-span-5 border">
+<section class="mx-10 h-[85vh] grid grid-cols-1 lg:grid-cols-3 gap-4">
+  <!-- Primer div (Siempre centrado, sin scroll, fijo en su posición) -->
+  <div class="col-span-1 flex items-center justify-center top-0 h-auto">
     <project-card-account></project-card-account>
   </div>
-  <div class="col-span-full sm:col-span-7 lg:col-span-7 border">
-    <project-card></project-card>
+
+  <!-- Segundo div (Fijo en pantalla, solo su contenido scrolleable) -->
+  <div class="lg:col-span-2 h-auto lg:overflow-auto bg-blue-500/50">
+    <div class="p-4">
+      <p>Div 2 - Contenido scrollable</p>
+      <div class="h-[200vh]">Contenido extra para probar scroll...</div>
+    </div>
   </div>
 </section>

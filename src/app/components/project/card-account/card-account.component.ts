@@ -4,10 +4,11 @@ import { Account } from '../../../interfaces/project/account';
 import { NgIf } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'project-card-account',
-  imports: [NgIf],
+  imports: [NgIf, TranslateModule],
   templateUrl: './card-account.component.html',
 })
 export class CardAccountComponent implements OnInit {
@@ -31,22 +32,36 @@ export class CardAccountComponent implements OnInit {
   loadAccount(): void {
     this.accountService.getAccount().subscribe((data: any) => {
       this.account = {
-        name: data.name, //
-        username: data.login, //
-        profileUrl: data.html_url, //
-        imgUrl: data.avatar_url, //
-        bio: data.bio, //
-        location: data.location, //
-        followers: data.followers, //
-        following: data.following, //
-        portfolioUrl: "https://jarolrojas.dev", //
-        twitterUrl: data.twitter_username ? `https://twitter.com/${data.twitter_username}` : '',
-        linkedinUrl: 'https://www.linkedin.com/in/jarolrojas',
-        instagramUrl: 'https://www.instagram.com/jarolrojasr/',
-        redditUrl: 'https://www.reddit.com/user/JarolRojasR/',
-        email: 'jr.rojas0327@gmail.com'
+        imgUrl: "https://avatars.githubusercontent.com/u/123003098?v=4",
+        name: data.name,
+        username: data.login,
+        bio: data.bio || 'account.noBio',
+
+        githubUrl: data.html_url,
+        email: "jr.rojas0327@gmail.com",
+        location: data.location || 'account.noLocation',
+
+
+        portfolioUrl: "https://jarolrojas.dev",
+        twitterUrl: "https://x.com/JarolRojasR",
+        linkedinUrl: "https://www.linkedin.com/in/jarolrojas",
+        instagramUrl: "https://www.instagram.com/jarolrojasr/",
+        redditUrl: "https://www.reddit.com/user/JarolRojasR/",
+
+        followers: data.followers,
+        following: data.following,
+        updatedAt: data.updated_at,
       };
       this.cdr.detectChanges();
     });
+  }
+
+  // Devuelve la ubicación lista para Google Maps
+  getLocationForMaps(location: string): string {
+    if (!location) return '';
+    let loc = location.replace(' 🇪🇸', '').replace(/,/g, '').replace(/\s+/g, '+');
+    // Traducir España a Spain
+    loc = loc.replace(/España|Spain/gi, 'Spain');
+    return loc;
   }
 }

@@ -21,12 +21,23 @@
     "BACKEND": "Backend",
     "DATABASES": "Databases"
   },
-
   "CATEGORY": {
     "FRONTEND": "Frontend",
     "BACKEND": "Backend",
     "DEVOPS": "DevOps",
     "DATABASE": "Database",
     "OTHER": "Other"
-  }
+  },
+  "FOLLOW": "Follow me on Github",
+  "account": {
+    "noBio": "No bio available",
+    "noLocation": "Not specified"
+  },
+  "PORFTOLIO": "Portfolio",
+  "SPAIN": "Spain",
+  "INSTAGRAM": "Instagram",
+  "REDDIT": "Reddit",
+  "EMAIL": "Email",
+  "FOLLOWERS": "Followers",
+  "FOLLOWING": "Following"
 }

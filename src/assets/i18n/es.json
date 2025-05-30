@@ -27,5 +27,16 @@
     "DEVOPS": "DevOps",
     "DATABASE": "Base de datos",
     "OTHER": "Otro"
-  }
+  },
+  "FOLLOW": "Sígueme en Github",
+  "account": {
+    "noBio": "Sin biografía disponible",
+    "noLocation": "No especificado"
+  },
+  "PORFTOLIO": "Portafolio",
+  "INSTAGRAM": "Instagram",
+  "REDDIT": "Reddit",
+  "EMAIL": "Correo",
+  "FOLLOWERS": "Seguidores",
+  "FOLLOWING": "Seguidos"
 }

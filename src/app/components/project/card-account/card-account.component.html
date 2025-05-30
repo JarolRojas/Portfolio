@@ -1,94 +1,84 @@
-<div *ngIf="account as acc; else loading" class="flex justify-center">
-
-
-
-  <div class="border rounded-2xl">
-    <div class="flex items-center gap-1">
-      <div class="">
-        <img [src]="acc.imgUrl" [alt]="acc.name" class="size-20 md:size-25 lg:size-30 rounded-full" />
-      </div>
-      <div class="">
-        <h2 class="text-2xl md:text-4xl lg:text-5xl font-semibold">{{ acc.name }}</h2>
-        <a [href]="acc.profileUrl" target="_blank">&#64;{{ acc.username }}</a>
-      </div>
-    </div>
-    <div class="flex flex-col items-center gap-2 ">
-      <!-- follow -->
-      <a [href]="acc.profileUrl" target="_blank">
-        <button type="button"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center gap-2">
-          <i class="fa-solid fa-user-plus"></i> Seguir
-        </button>
-      </a>
-
-    </div>
-    <div class="">
-      <p class="text-sm text-justify md:text-base lg:text-lg p-2">{{ acc.bio }}</p>
-    </div>
-    <hr>
-    <!-- location -->
+<div *ngIf="account as acc; else loading" class="flex flex-col gap-4 border rounded-2xl p-4 bg-[#0d1117]">
+  <div class="flex items-center gap-2">
     <div>
-      <div class="flex items-center gap-2 p-2">
-        <a href="https://www.google.es/maps/place/Pamplona,+Navarra/@42.815766,-1.6500216,13z/data=!3m1!4b1!4m6!3m5!1s0xd50928ba31965c7:0x4e6e903632cb2e90!8m2!3d42.812526!4d-1.6457745!16zL20vMGc4NTA?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-          target="_blank">
-          <i class="fa-solid fa-location-dot text-gray-500 pr-1"></i>
-          <span class="text-sm md
-          se lg:text-lg">{{ acc.location || 'No disponible' }}</span>
-        </a>
-      </div>
-
-      <!-- Redes socuales -->
-      <div class="flex items-center gap-2 p-2">
-        <span class="text-sm md:text-base lg:text-lg">
-          <a [href]="acc.portfolioUrl" target="_blank">
-            <i class="fa-solid fa-link text-gray-500"></i> {{ acc.portfolioUrl || 'No disponible' }}
-          </a>
-        </span>
-      </div>
-      <div class="flex items-center gap-2 p-2">
-        <span class="text-sm md:text-base lg:text-lg">
-          <a [href]="acc.twitterUrl" target="_blank">
-            <i class="fa-brands fa-x-twitter text-gray-500"></i> X (Twitter)
-          </a>
-        </span>
-      </div>
-      <div class="flex items-center gap-2 p-2">
-        <span class="text-sm md:text-base lg:text-lg">
-          <a [href]="acc.linkedinUrl" target="_blank">
-            <i class="fa-brands fa-linkedin text-gray-500"></i> Linkedin
-          </a>
-        </span>
-      </div>
-      <div class="flex items-center gap-2 p-2">
-        <span class="text-sm md:text-base lg:text-lg">
-          <ng-container *ngIf="acc.email; else noEmail">
-            <a [href]="'mailto:' + acc.email" target="_blank">
-              <i class="fa-solid fa-envelope text-gray-500"></i> {{ acc.email }}
-            </a>
-          </ng-container>
-          <ng-template #noEmail>
-            <i class="fa-solid fa-envelope text-gray-500"></i> No disponible
-          </ng-template>
-        </span>
-      </div>
-
+      <img [src]="acc.imgUrl" [alt]="acc.name" class="size-18 rounded-full" />
     </div>
-
-    <hr>
-    <div class="flex justify-center gap-10 p-2">
-      <div class="flex items-center gap-2">
-        <i class="fa-solid fa-users text-gray-500"></i>
-        <span class="text-sm md:text-base lg:text-lg">{{ acc.followers }} seguidores</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <i class="fa-solid fa-user-plus text-gray-500"></i>
-        <span class="text-sm md:text-base lg:text-lg">{{ acc.following }} seguidos</span>
-      </div>
+    <div class="flex flex-col">
+      <h2 class="text-2xl font-bold">{{ acc.name }}</h2>
+      <a class="-mt-1 text-sm" [href]="acc.githubUrl" target="_blank">&#64;{{ acc.username }}</a>
     </div>
+  </div>
+  <div
+    class="border border-[#3d444d] bg-[#212830] flex items-center justify-center rounded-lg hover:bg-[#262c36] transition-all">
+    <a class="flex items-center gap-3" [href]="acc.githubUrl"
+      class="w-full h-full text-center p-2 text-sm flex items-center justify-center gap-2">
+      {{ 'FOLLOW' | translate }}
+      <img src="assets/logos/github.svg" alt="github" width="20px" height="20px" />
+    </a>
+  </div>
+  <div class="px-2">
+    <p class="text-sm text-justify">{{ acc.bio | translate }}</p>
+  </div>
+  <hr class="border-gray-300/50">
 
+  <div class="flex flex-col gap-3 mx-2">
+    <a class="flex items-center gap-3"
+      [href]="'https://www.google.com/maps/search/' + getLocationForMaps(acc.location | translate)" target="_blank">
+      <i class="size-3 fa-solid fa-location-dot text-gray-500"></i>
+      <span>{{ acc.location | translate }}</span>
+    </a>
+    <a class="flex items-center gap-3" [href]="acc.portfolioUrl">
+      <i class="size-3 fa-solid fa-link text-gray-500"></i>
+      <span>
+        {{'PORFTOLIO' | translate}}
+      </span>
+    </a>
+    <a class="flex items-center gap-3" [href]="acc.twitterUrl" target="_blank">
+      <i class="fa-brands fa-x-twitter text-gray-500"></i>
+      <span>
+        X (Twitter)
+      </span>
+    </a>
+    <a class="flex items-center gap-3" [href]="acc.linkedinUrl" target="_blank">
+      <i class="fa-brands fa-linkedin text-gray-500"></i>
+      <span>
+        Linkedin
+      </span>
+    </a>
+    <a class="flex items-center gap-3" [href]="acc.instagramUrl" target="_blank">
+      <i class="fa-brands fa-instagram text-gray-500"></i>
+      <span>
+        Instagram
+      </span>
+    </a>
+    <a class="flex items-center gap-3" [href]="acc.redditUrl" target="_blank">
+      <i class="fa-brands fa-reddit text-gray-500"></i>
+      <span>
+        Reddit
+      </span>
+    </a>
+    <a class="flex items-center gap-3" [href]="'mailto:' + acc.email" target="_blank">
+      <i class="size-3 fa-solid fa-envelope text-gray-500"></i>
+      <span>
+        Email
+      </span>
+    </a>
+  </div>
+  <hr class="border-gray-300/50">
+
+  <div class="flex justify-center items-center gap-10">
+    <a href="https://github.com/JarolRojas?tab=followers" class="flex items-center gap-3">
+      <i class="size-3 fa-solid fa-users text-gray-500 -mt-1"></i>
+      <span>{{ acc.followers }} {{ 'FOLLOWERS' | translate }}</span>
+    </a>
+    <a href="https://github.com/JarolRojas?tab=following" class="flex items-center gap-3">
+      <i class="size-3 fa-solid fa-user-plus text-gray-500 -mt-1"></i>
+      <span>{{ acc.following }} {{ 'FOLLOWING' | translate }}</span>
+    </a>
   </div>
 
 </div>
+
 <ng-template #loading>
   <div class="w-full text-center text-gray-400 py-8">Cargando datos de GitHub...</div>
 </ng-template>
