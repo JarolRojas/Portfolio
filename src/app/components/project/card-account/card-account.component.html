@@ -17,7 +17,12 @@
     </a>
   </div>
   <div class="px-2">
-    <p class="text-sm text-justify">{{ acc.bio | translate }}</p>
+    <ng-container *ngIf="account; else loadingBio">
+      <p class="text-sm text-justify">{{ account.bio | translate }}</p>
+    </ng-container>
+    <ng-template #loadingBio>
+      <div class="animate-pulse bg-gray-700 rounded h-5 w-3/4 my-2"></div>
+    </ng-template>
   </div>
   <hr class="border-gray-300/50">
 
