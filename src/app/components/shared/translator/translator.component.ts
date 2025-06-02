@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-translator',
+  selector: 'header-translator',
   imports: [],
   templateUrl: './translator.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
