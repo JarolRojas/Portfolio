@@ -1,0 +1,32 @@
+<div [ngClass]="vertical ? 'flex flex-col' : 'flex flex-row gap-5 lg:gap-8'" class="">
+  <a class="header-menu-list" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-home"></i>
+    <p>{{ 'MENULIST.HOME' | translate }}</p>
+  </a>
+  <a class="header-menu-list" [routerLink]="['/skill']" routerLinkActive="active"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-lightbulb"></i>
+    <p>{{ 'MENULIST.SKILL' | translate }}</p>
+  </a>
+  <a class="header-menu-list" [routerLink]="['/experience']" routerLinkActive="active"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-briefcase"></i>
+    <p>{{ 'MENULIST.EXPERIENCE' | translate }}</p>
+  </a>
+  <a class="header-menu-list" [routerLink]="['/education']" routerLinkActive="active"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-graduation-cap"></i>
+    <p>{{ 'MENULIST.EDUCATION' | translate }}</p>
+  </a>
+  <a class="header-menu-list" [routerLink]="['/project']" routerLinkActive="active"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-folder-open"></i>
+    <p>{{ 'MENULIST.PROJECT' | translate }}</p>
+  </a>
+  <a class="header-menu-list" [routerLink]="['/contact']" routerLinkActive="active"
+    (click)="onOptionClick && onOptionClick()">
+    <i class="fa fa-envelope"></i>
+    <p>{{ 'MENULIST.CONTACT' | translate }}</p>
+  </a>
+</div>

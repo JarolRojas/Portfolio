@@ -1,1 +1,13 @@
-<p>navbar works!</p>,
+<nav class="fixed top-0 md:top-5 w-full flex justify-center items-center z-50 bg-red-500/40 md:bg-transparent">
+  <!-- <nav class="fixed md:top-3 w-full flex justify-center items-center z-50 bg-primary md:bg-transparent"> -->
+  <div class="w-full md:hidden flex items-center justify-between px-3 ">
+    <div class="font-bold text-lg mb-2">JarolRojas<span class="text-cyan-500">.dev</span></div>
+    <div>
+      <navbar-burger [isOpen]="isOpen" [toggleMenu]="toggleMenu.bind(this)"
+        [closeMenu]="closeMenu.bind(this)"></navbar-burger>
+    </div>
+  </div>
+  <div class="hidden md:flex ">
+    <navbar-menu-list></navbar-menu-list>
+  </div>
+</nav>

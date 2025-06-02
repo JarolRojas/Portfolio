@@ -1,3 +1,10 @@
 {
-    "hola": "Hello"
+    "MENULIST":{
+        "HOME": "Home",
+        "EXPERIENCE": "Experience",
+        "EDUCATION": "Education",
+        "PROJECT": "Projects",
+        "SKILL": "Skills",
+        "CONTACT": "Contact"
+    }
 }
