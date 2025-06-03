@@ -6,5 +6,9 @@
     "PROJECT": "Proyectos",
     "SKILL": "Habilidades",
     "CONTACT": "Contacto"
+  },
+  "PROJECTS": {
+    "NO_PROJECTS": "No se encontraron proyectos",
+    "LOAD_PROJECTS": "Cargando proyectos..."
   }
 }

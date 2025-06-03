@@ -7,3 +7,6 @@
     @apply flex items-center gap-2
 }
 
+.active{
+  font-weight: bolder;
+}
