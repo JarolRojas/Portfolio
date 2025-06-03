@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ReadmeComponent } from "../../components/home/readme/readme.component";
 
 @Component({
   selector: 'home',
-  imports: [RouterLink],
+  imports: [RouterLink, ReadmeComponent],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
