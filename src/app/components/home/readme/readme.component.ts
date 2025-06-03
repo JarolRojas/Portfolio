@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { GithubService } from '../../../services/github/github.service';
+import { GithubService } from '../../../services/github/readme/github.service';
 import { marked } from 'marked';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -25,15 +25,13 @@ export class ReadmeComponent implements OnInit {
   ngOnInit(): void {
     this.github.getReadme().subscribe({
       next: (data: any) => {
-        console.log('GitHub README response:', data);
         this.rawMarkdown = atob(data.content.replace(/\n/g, ''));
         this.htmlPreview = marked.parse(this.rawMarkdown) as string;
         this.readmeHtml = this.sanitizer.bypassSecurityTrustHtml(this.htmlPreview);
         this.cdr.markForCheck();
       },
       error: (err) => {
-        console.error('Error al obtener el README:', err);
-        this.readmeHtml = null; // El control de error queda en el HTML
+        this.readmeHtml = null;
         this.cdr.markForCheck();
       }
     });
