@@ -1,10 +1,9 @@
-<div class="grid min-h-screen grid-rows-[1fr_7fr_auto]">
-  <header class="">
+<div class="flex flex-col min-h-screen">
+  <header class="h-25 md:h-30">
     <navbar></navbar>
-
     <header-translator></header-translator>
   </header>
-  <main>
+  <main class="flex-1 mx-auto">
     <router-outlet />
   </main>
   <app-footer></app-footer>
