@@ -1,2 +1,6 @@
-<link rel="stylesheet" href="/assets/github-markdown.css">
-<div class="github-markdown-body" [innerHTML]="readmeHtml"></div>
+<ng-container *ngIf="readmeHtml; else errorBlock">
+  <div class="github-markdown-body" [innerHTML]="readmeHtml"></div>
+</ng-container>
+<ng-template #errorBlock>
+  <div class="error-message text-red-500">{{'README.NO_README' | translate}}</div>
+</ng-template>

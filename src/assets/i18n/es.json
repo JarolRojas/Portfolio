@@ -7,8 +7,20 @@
     "SKILL": "Habilidades",
     "CONTACT": "Contacto"
   },
+  "HOME": {
+    "DOWNLOAD_CV": "Descargar CV"
+  },
   "PROJECTS": {
     "NO_PROJECTS": "No se encontraron proyectos",
     "LOAD_PROJECTS": "Cargando proyectos..."
+  },
+  "README": {
+    "NO_README": "No se encontró el archivo README.md "
+  },
+
+
+
+  "FOOTER":{
+    "COPYRIGHT": "Todos los derechos reservados"
   }
 }

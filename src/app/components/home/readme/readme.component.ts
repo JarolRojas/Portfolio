@@ -1,12 +1,15 @@
-import {  Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { GithubService } from '../../../services/github/github.service';
 import { marked } from 'marked';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'home-readme',
   templateUrl: './readme.component.html',
   standalone: true,
+  imports: [CommonModule, TranslateModule],
 })
 export class ReadmeComponent implements OnInit {
   readmeHtml: SafeHtml | null = null;
@@ -30,7 +33,7 @@ export class ReadmeComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error al obtener el README:', err);
-        this.readmeHtml = this.sanitizer.bypassSecurityTrustHtml('<p style="color:red">No se pudo cargar el README de GitHub.</p>');
+        this.readmeHtml = null; // El control de error queda en el HTML
         this.cdr.markForCheck();
       }
     });
